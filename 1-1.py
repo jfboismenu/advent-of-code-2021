@@ -1,5 +1,8 @@
-values = list(map(lambda x: int(x),
-"""109
+# -*- coding: utf-8 -*-
+values = list(
+    map(
+        lambda x: int(x),
+        """109
 117
 118
 98
@@ -1998,12 +2001,14 @@ values = list(map(lambda x: int(x),
 6292
 6293
 6297
-6308""".split()))
+6308""".split(),
+    )
+)
 
 nb_increases = 0
 previous = values[0]
 for current in values[1:]:
-	if previous < current:
-		nb_increases += 1
-	previous = current
+    if previous < current:
+        nb_increases += 1
+    previous = current
 print(nb_increases)

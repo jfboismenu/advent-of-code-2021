@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 if True:
-	values = """001110000001
+    values = """001110000001
 010100101000
 101101010010
 010111101010
@@ -1000,7 +1001,7 @@ if True:
 010001011110
 001101010010"""
 else:
-	values = """00100
+    values = """00100
 11110
 10110
 10111
@@ -1022,25 +1023,25 @@ gamma_rate = ""
 epsilon_rate = ""
 
 for idx in range(len(values[0])):
-	nb_0s = 0
-	nb_1s = 0
-	for value in values:
-		bit = value[idx]
-		if bit == "1":
-			nb_1s += 1
-		else:
-			nb_0s += 1
-	
-	if nb_0s > nb_1s:
-		gamma_rate += "0"
-		epsilon_rate += "1"
-	elif nb_0s < nb_1s:
-		gamma_rate += "1"
-		epsilon_rate += "0"
-	else:
-		raise RuntimeError()
-		
+    nb_0s = 0
+    nb_1s = 0
+    for value in values:
+        bit = value[idx]
+        if bit == "1":
+            nb_1s += 1
+        else:
+            nb_0s += 1
+
+    if nb_0s > nb_1s:
+        gamma_rate += "0"
+        epsilon_rate += "1"
+    elif nb_0s < nb_1s:
+        gamma_rate += "1"
+        epsilon_rate += "0"
+    else:
+        raise RuntimeError()
+
 print(gamma_rate, int(gamma_rate, 2))
 print(epsilon_rate, int(epsilon_rate, 2))
 
-print(int(gamma_rate, 2)*int(epsilon_rate, 2))
+print(int(gamma_rate, 2) * int(epsilon_rate, 2))

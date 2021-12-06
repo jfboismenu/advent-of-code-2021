@@ -1,5 +1,8 @@
-values = list(map(lambda x: int(x),
-"""109
+# -*- coding: utf-8 -*-
+values = list(
+    map(
+        lambda x: int(x),
+        """109
 117
 118
 98
@@ -1998,20 +2001,22 @@ values = list(map(lambda x: int(x),
 6292
 6293
 6297
-6308""".split()))
+6308""".split(),
+    )
+)
 
 nb_increases = 0
-#values = [1,2,3,4,5,4,3,2,1]
+# values = [1,2,3,4,5,4,3,2,1]
 trios = len(values) - 2
 previous_sum = 9999999999
 for current in range(trios):
-	window = values[current: current + 3]
-	window_sum = sum(window)
-	print(window, window_sum)
-	if previous_sum < window_sum:
-		print("increased")
-		nb_increases += 1
-	else:
-		print("decreased")
-	previous_sum = window_sum
+    window = values[current : current + 3]
+    window_sum = sum(window)
+    print(window, window_sum)
+    if previous_sum < window_sum:
+        print("increased")
+        nb_increases += 1
+    else:
+        print("decreased")
+    previous_sum = window_sum
 print(nb_increases)

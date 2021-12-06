@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 values = """forward 2
 down 4
 down 1
@@ -997,18 +998,20 @@ down 1
 forward 6
 down 6
 down 5
-forward 1""".split("\n")
+forward 1""".split(
+    "\n"
+)
 
 x = 0
 y = 0
 for command in values:
-	print(command)
-	action, str_value = command.split(" ")
-	value = int(str_value)
-	if action == "forward":
-		x += value
-	elif action == "down":
-		y += value
-	elif action == "up":
-		y -= value
-print(x,y, x*y)
+    print(command)
+    action, str_value = command.split(" ")
+    value = int(str_value)
+    if action == "forward":
+        x += value
+    elif action == "down":
+        y += value
+    elif action == "up":
+        y -= value
+print(x, y, x * y)
